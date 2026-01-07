@@ -1,162 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Harsha Jha | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Harsha Jha | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg:#0f172a;
-      --card:#111827;
-      --text:#e5e7eb;
-      --sub:#9ca3af;
-      --accent:#38bdf8;
-      --btn:#2563eb;
-    }
+<style>
+:root{
+--bg:#0b1220;
+--card:#111827;
+--text:#e5e7eb;
+--sub:#9ca3af;
+--accent:#38bdf8;
+--btn:#2563eb;
+--glow:rgba(56,189,248,0.6);
+}
 
-    body.light {
-      --bg:#f9fafb;
-      --card:#ffffff;
-      --text:#111827;
-      --sub:#4b5563;
-      --accent:#2563eb;
-      --btn:#1d4ed8;
-    }
+body.light{
+--bg:#f9fafb;
+--card:#ffffff;
+--text:#111827;
+--sub:#4b5563;
+--accent:#2563eb;
+--btn:#1d4ed8;
+--glow:rgba(37,99,235,0.5);
+}
 
-    * {
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-      scroll-behavior:smooth;
-    }
+*{box-sizing:border-box;font-family:Poppins,sans-serif}
 
-    body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-      transition:0.4s;
-    }
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+transition:0.4s;
+}
 
-    .container {
-      max-width:900px;
-      margin:auto;
-      padding:40px 20px;
-    }
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
 
-    /* Toggle */
-    .toggle {
-      position:fixed;
-      top:20px;
-      right:20px;
-      background:var(--card);
-      border:none;
-      padding:10px 16px;
-      border-radius:25px;
-      color:var(--text);
-      cursor:pointer;
-      box-shadow:0 5px 20px rgba(0,0,0,0.3);
-      z-index:10;
-    }
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+background:var(--card);
+border:none;
+padding:10px 18px;
+border-radius:30px;
+color:var(--text);
+cursor:pointer;
+z-index:10;
+box-shadow:0 0 20px var(--glow);
+}
 
-    /* Cards */
-    .card {
-      background:var(--card);
-      padding:30px;
-      border-radius:20px;
-      margin-bottom:35px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.25);
-      opacity:0;
-      transform:translateY(40px);
-      transition:0.8s ease;
-    }
+.card{
+background:var(--card);
+padding:32px;
+border-radius:22px;
+margin-bottom:36px;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+opacity:0;
+transform:translateY(60px) scale(.97);
+transition:0.9s ease;
+}
 
-    .card.show {
-      opacity:1;
-      transform:translateY(0);
-    }
+.card.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
 
-    .card:hover {
-      transform:translateY(-4px);
-    }
+.card:hover{
+box-shadow:0 0 35px var(--glow);
+transform:translateY(-6px);
+}
 
-    h1 {
-      font-size:2.5rem;
-      margin-bottom:6px;
-    }
+h1{
+font-size:2.6rem;
+margin-bottom:8px;
+}
 
-    h2 {
-      color:var(--accent);
-      margin-bottom:14px;
-      position:relative;
-      display:inline-block;
-    }
+.cursor{
+color:var(--accent);
+animation:blink 1s infinite;
+}
 
-    h2::after {
-      content:'';
-      position:absolute;
-      left:0;
-      bottom:-6px;
-      width:0;
-      height:2px;
-      background:var(--accent);
-      transition:0.4s;
-    }
+@keyframes blink{
+50%{opacity:0}
+}
 
-    .card:hover h2::after {
-      width:100%;
-    }
+h2{
+color:var(--accent);
+margin-bottom:14px;
+position:relative;
+display:inline-block;
+}
 
-    p {color:var(--sub); margin-top:8px;}
-    .location {font-size:0.9rem; color:var(--sub);}
+h2::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:100%;
+height:2px;
+background:linear-gradient(90deg,var(--accent),transparent);
+animation:glow 2s infinite alternate;
+}
 
-    /* Skills */
-    .skills span {
-      display:inline-block;
-      background:rgba(56,189,248,0.15);
-      color:var(--accent);
-      padding:6px 14px;
-      border-radius:20px;
-      margin:6px 6px 0 0;
-      font-size:0.85rem;
-    }
+@keyframes glow{
+from{opacity:.4}
+to{opacity:1}
+}
 
-    /* Projects */
-    .project {margin-top:18px;}
-    .tech {font-size:0.85rem; color:var(--accent);}
+p{color:var(--sub)}
 
-    /* Buttons */
-    .btn-group {margin-top:16px;}
-    .btn {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 18px;
-      margin-right:12px;
-      background:var(--btn);
-      color:#fff;
-      border-radius:30px;
-      text-decoration:none;
-      font-size:0.9rem;
-      transition:0.3s;
-    }
+.skills span{
+display:inline-block;
+background:rgba(56,189,248,.15);
+color:var(--accent);
+padding:7px 16px;
+border-radius:20px;
+margin:6px 6px 0 0;
+font-size:.85rem;
+}
 
-    .btn:hover {
-      background:var(--accent);
-      transform:translateY(-3px);
-    }
+.project{margin-top:20px}
+.tech{color:var(--accent);font-size:.85rem}
 
-    footer {
-      text-align:center;
-      font-size:0.8rem;
-      color:var(--sub);
-      margin-top:30px;
-    }
-  </style>
+.btn-group{margin-top:18px}
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:12px 22px;
+margin-right:12px;
+background:linear-gradient(135deg,var(--btn),var(--accent));
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+font-size:.9rem;
+transition:.3s;
+box-shadow:0 0 18px transparent;
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 0 25px var(--glow);
+}
+
+footer{
+text-align:center;
+font-size:.8rem;
+color:var(--sub);
+margin-top:30px;
+}
+</style>
 </head>
 
 <body>
@@ -165,124 +168,97 @@
 
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="card">
-    <h1>Harsha Jha</h1>
-    <p>Engineering Undergraduate | Data Analytics & Machine Learning Enthusiast</p>
-    <div class="location">Mumbai, India</div>
-  </div>
+<div class="card">
+<h1><span id="typing"></span><span class="cursor">|</span></h1>
+<p>Engineering Undergraduate | Data Analytics & Machine Learning Enthusiast</p>
+<p>Mumbai, India</p>
+</div>
 
-  <!-- PROFILE -->
-  <div class="card">
-    <h2>Profile</h2>
-    <p>
-      Engineering undergraduate with hands-on experience in data analytics and machine learning fundamentals.
-      Worked on academic and self-driven projects involving data preprocessing, prediction models,
-      and basic web systems. Continuously improving analytical thinking and technical skills
-      through practical implementation.
-    </p>
-  </div>
+<div class="card">
+<h2>Profile</h2>
+<p>
+Engineering undergraduate with hands-on exposure to data analytics, machine learning fundamentals, and backend web development. Passionate about building data-driven solutions and continuously enhancing technical expertise through practical projects.
+</p>
+</div>
 
-  <!-- EDUCATION -->
-  <div class="card">
-    <h2>Education</h2>
-    <p><strong>Bachelor of Engineering</strong><br>
-       Shah & Anchor Kutchhi Engineering College</p>
-  </div>
+<div class="card">
+<h2>Education</h2>
+<p><strong>Bachelor of Engineering</strong><br>Shah & Anchor Kutchhi Engineering College</p>
+</div>
 
-  <!-- SKILLS -->
-  <div class="card">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>Data Analytics</span>
-      <span>Machine Learning (Fundamentals)</span>
-      <span>Power BI</span>
-      <span>SQL</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Django (Basics)</span>
-    </div>
-  </div>
+<div class="card">
+<h2>Skills</h2>
+<div class="skills">
+<span>Python</span><span>Data Analytics</span><span>Machine Learning</span>
+<span>Power BI</span><span>SQL</span><span>HTML</span><span>CSS</span><span>Django</span>
+</div>
+</div>
 
-  <!-- PROJECTS -->
-  <div class="card">
-    <h2>Projects</h2>
+<div class="card">
+<h2>Projects</h2>
 
-    <div class="project">
-      <h3>Queue Management System</h3>
-      <p>
-        Web-based application for managing queues through token generation and online reservations,
-        focusing on backend logic and database interaction.
-      </p>
-      <div class="tech">Python • Django • MySQL</div>
-    </div>
+<div class="project">
+<h3>Queue Management System</h3>
+<p>Backend-focused web application for queue handling, token generation, and online reservations.</p>
+<div class="tech">Python • Django • MySQL</div>
+</div>
 
-    <div class="project">
-      <h3>Diabetes Prediction System</h3>
-      <p>
-        Machine learning model developed to predict diabetes using healthcare data,
-        including preprocessing, training, and dashboard-based visualization.
-      </p>
-      <div class="tech">Python • Machine Learning • Power BI</div>
-    </div>
+<div class="project">
+<h3>Diabetes Prediction System</h3>
+<p>Machine learning model with data preprocessing, prediction, and dashboard-based insights.</p>
+<div class="tech">Python • ML • Power BI</div>
+</div>
 
-    <div class="project">
-      <h3>Sentiment Analysis of Tweets</h3>
-      <p>
-        NLP-based system to classify tweets into positive, negative, and neutral sentiments
-        using text preprocessing techniques.
-      </p>
-      <div class="tech">Python • NLP</div>
-    </div>
+<div class="project">
+<h3>Sentiment Analysis of Tweets</h3>
+<p>NLP system to classify tweets using text preprocessing and sentiment modeling.</p>
+<div class="tech">Python • NLP</div>
+</div>
 
-    <div class="project">
-      <h3>Health Monitoring System (IoT)</h3>
-      <p>
-        Arduino-based system for monitoring vital health parameters using sensors
-        and embedded programming.
-      </p>
-      <div class="tech">Arduino • Sensors</div>
-    </div>
-  </div>
+<div class="project">
+<h3>Health Monitoring System (IoT)</h3>
+<p>Arduino-based solution for monitoring health parameters using sensors.</p>
+<div class="tech">Arduino • IoT</div>
+</div>
+</div>
 
-  <!-- CONTACT -->
-  <div class="card">
-    <h2>Contact</h2>
-    <p>📧 jiharsha73@gmail.com</p>
-    <p>📞 +91 9006137097</p>
+<div class="card">
+<h2>Contact</h2>
+<p>📧 jiharsha73@gmail.com</p>
+<p>📞 +91 9006137097</p>
 
-    <div class="btn-group">
-      <a class="btn" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">
-        <i class="fa-brands fa-linkedin"></i> View LinkedIn
-      </a>
-      <a class="btn" href="https://github.com/Harshajha23" target="_blank">
-        <i class="fa-brands fa-github"></i> View GitHub
-      </a>
-    </div>
-  </div>
+<div class="btn-group">
+<a class="btn" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">
+<i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+<a class="btn" href="https://github.com/Harshajha23" target="_blank">
+<i class="fa-brands fa-github"></i> GitHub
+</a>
+</div>
+</div>
 
-  <footer>© 2026 Harsha Jha | Portfolio</footer>
+<footer>© 2026 Harsha Jha</footer>
 
 </div>
 
 <script>
-  function toggleMode() {
-    document.body.classList.toggle("light");
-  }
+function toggleMode(){document.body.classList.toggle("light")}
 
-  const cards = document.querySelectorAll('.card');
-  const reveal = () => {
-    cards.forEach(card => {
-      const top = card.getBoundingClientRect().top;
-      if (top < window.innerHeight - 80) {
-        card.classList.add('show');
-      }
-    });
-  };
+const cards=document.querySelectorAll('.card')
+const reveal=()=>cards.forEach(c=>{
+if(c.getBoundingClientRect().top<window.innerHeight-100)c.classList.add('show')
+})
+window.addEventListener('scroll',reveal);reveal()
 
-  window.addEventListener('scroll', reveal);
-  reveal();
+const text="Harsha Jha"
+let i=0
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i)
+i++
+setTimeout(type,120)
+}}
+type()
 </script>
 
 </body>
