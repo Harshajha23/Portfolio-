@@ -8,16 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --subtext: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    .light {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --subtext: #475569;
+      --accent: #2563eb;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #0f172a;
-      color: #e5e7eb;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
 
@@ -25,19 +42,28 @@
       padding: 70px 20px;
       text-align: center;
       background: linear-gradient(135deg, #020617, #0f172a);
-      animation: fadeDown 1.2s ease;
     }
 
     header h1 {
       font-size: 2.6rem;
-      font-weight: 600;
-      color: #f9fafb;
     }
 
     header p {
       margin-top: 10px;
-      font-size: 1.1rem;
-      color: #cbd5f5;
+      color: var(--subtext);
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      border: none;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 100;
     }
 
     section {
@@ -55,43 +81,40 @@
     }
 
     h2 {
-      font-size: 1.5rem;
       margin-bottom: 15px;
-      color: #f9fafb;
+      font-size: 1.5rem;
     }
 
     .card {
-      background: #020617;
+      background: var(--card);
       padding: 24px;
       border-radius: 14px;
       margin-bottom: 22px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    }
-
-    ul {
-      margin-left: 20px;
+    a.button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-25px); }
-      to { opacity: 1; transform: translateY(0); }
+      color: var(--subtext);
     }
   </style>
 </head>
 <body>
+
+<button class="toggle" onclick="toggleMode()">Toggle Mode</button>
 
 <header>
   <h1>Harsha Jha</h1>
@@ -102,72 +125,54 @@
 <section>
   <h2>Profile</h2>
   <div class="card">
-    <p>
-      Engineering undergraduate with hands-on experience in data analytics, machine learning fundamentals,
-      and business intelligence tools. Actively involved in academic and project-based work focused on
-      extracting insights from data and building practical, real-world solutions.
-    </p>
+    Engineering undergraduate with hands-on experience in data analytics, machine learning fundamentals,
+    and business intelligence tools. Actively involved in academic and project-based work focused on
+    extracting insights from data and building practical, real-world solutions.
   </div>
 </section>
 
 <section>
   <h2>Education</h2>
   <div class="card">
-    <p><strong>Bachelor of Engineering</strong></p>
-    <p>Shah & Anchor Kutchhi Engineering College</p>
+    <strong>Bachelor of Engineering</strong><br>
+    Shah & Anchor Kutchhi Engineering College
   </div>
 </section>
 
 <section>
   <h2>Skills</h2>
   <div class="card">
-    <ul>
-      <li>Python for Data Analysis</li>
-      <li>Machine Learning Fundamentals</li>
-      <li>Power BI (Dashboards & Data Visualization)</li>
-      <li>SQL & Data Handling</li>
-      <li>Business Intelligence Concepts</li>
-      <li>HTML & CSS (Basic)</li>
-    </ul>
+    Python for Data Analysis • Machine Learning Fundamentals • Power BI (Dashboards & Visualization)<br>
+    SQL & Data Handling • Business Intelligence Concepts • HTML & CSS (Basic)
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
   <div class="card">
-    <p><strong>Diabetes Prediction System (ML & Power BI)</strong></p>
-    <ul>
-      <li>Developed predictive models using structured healthcare datasets</li>
-      <li>Evaluated performance using classification metrics</li>
-      <li>Created Power BI dashboards to visualize outcomes</li>
-    </ul>
+    <strong>Diabetes Prediction System</strong><br>
+    Machine learning models with Power BI dashboards for healthcare insights.
   </div>
 
   <div class="card">
-    <p><strong>Sentiment Analysis of Tweets</strong></p>
-    <ul>
-      <li>Built NLP-based sentiment classification system</li>
-      <li>Visualized sentiment trends through interactive charts</li>
-      <li>Deployed using Streamlit</li>
-    </ul>
+    <strong>Sentiment Analysis of Tweets</strong><br>
+    NLP-based sentiment classification with Streamlit visualization.
   </div>
 </section>
 
 <section>
-  <h2>Certifications</h2>
+  <h2>Contact</h2>
   <div class="card">
-    <ul>
-      <li>Power BI Certification</li>
-      <li>Data Science – Online</li>
-      <li>Generative AI Internship – EduSkills</li>
-      <li>Networking Basics – Cisco</li>
-      <li>Python Programming – Infosys Springboard</li>
-    </ul>
+    📧 Email: <strong>jhaharsha73@gmail.com</strong><br>
+    📞 Phone: <strong>+91 9006137097</strong><br><br>
+
+    <a class="button" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">LinkedIn</a>
+    <a class="button" href="https://github.com/Harshajha23" target="_blank">GitHub</a>
   </div>
 </section>
 
 <footer>
-  © 2026 Harsha Jha
+  © 2026 Harsha Jha | Portfolio
 </footer>
 
 <script>
@@ -179,6 +184,10 @@
       }
     });
   });
+
+  function toggleMode() {
+    document.body.classList.toggle("light");
+  }
 </script>
 
 </body>
