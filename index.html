@@ -1,53 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harsha Jha | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --subtext: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    .light {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --subtext: #475569;
+      --accent: #2563eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    header h1 {
+      font-size: 2.7rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: var(--subtext);
+      font-size: 1.05rem;
+    }
+
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      border: none;
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 26px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .skills span {
+      display: inline-block;
+      background: rgba(56,189,248,0.15);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 6px 6px 0 0;
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 10px 18px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      font-size: 0.9rem;
+      color: var(--subtext);
+    }
+  </style>
+</head>
+<body>
+
+<button class="toggle" onclick="toggleMode()">Toggle Mode</button>
+
+<header>
+  <h1>Harsha Jha</h1>
+  <p>Engineering Undergraduate | Data Analytics • Machine Learning • Business Intelligence</p>
+  <p>Mumbai, India</p>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <div class="card">
+    Engineering undergraduate with practical exposure to data analytics, machine learning fundamentals,
+    and system-oriented academic projects. Interested in applying analytical thinking and technical skills
+    to real-world problem statements through continuous learning and project-based work.
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <strong>Bachelor of Engineering</strong><br>
+    Shah & Anchor Kutchhi Engineering College
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span>Python</span>
+    <span>Data Analytics</span>
+    <span>Machine Learning (Fundamentals)</span>
+    <span>Power BI</span>
+    <span>SQL</span>
+    <span>Business Intelligence</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Django (Basics)</span>
+  </div>
+</section>
+
 <section>
   <h2>Projects</h2>
 
   <div class="card">
     <strong>Queue Management System (Academic Web Project)</strong><br><br>
-    Designed and implemented a web-based queue management system as part of an academic mini-project.
-    The system allows users to generate queue tokens and make reservations online, while providing an
-    admin interface to manage queues and monitor token flow. The project focused on understanding
-    backend logic, database integration, and real-time data handling in a practical scenario.
+    Designed and implemented a web-based queue management system allowing users to generate tokens and
+    make online reservations. Included an admin interface for queue monitoring and data handling,
+    focusing on backend logic and database integration.
     <br><br>
     <em>Technologies:</em> Django, MySQL, HTML, CSS, JavaScript
   </div>
 
   <div class="card">
-    <strong>Diabetes Prediction System (Machine Learning & Data Visualization)</strong><br><br>
-    Developed a machine learning-based prediction system using publicly available healthcare datasets.
-    Performed data preprocessing and applied supervised learning algorithms to analyze diabetes-related
-    patterns. Created interactive Power BI dashboards to visualize prediction results and key health
-    indicators, emphasizing data interpretation and insight generation.
+    <strong>Diabetes Prediction System (ML & Power BI)</strong><br><br>
+    Developed a machine learning-based prediction system using healthcare datasets. Performed data
+    preprocessing and applied supervised learning algorithms. Created Power BI dashboards to visualize
+    predictions and health indicators.
     <br><br>
-    <em>Technologies:</em> Python, Machine Learning, Power BI, Pandas, Matplotlib
+    <em>Technologies:</em> Python, Machine Learning, Power BI, Pandas
   </div>
 
   <div class="card">
-    <strong>Sentiment Analysis of Tweets (NLP-Based Application)</strong><br><br>
-    Built a sentiment analysis application to classify tweets into positive, negative, and neutral
-    categories using natural language processing techniques. The project explored text preprocessing,
-    sentiment scoring, and visualization of results. A simple web interface was developed to present
-    sentiment trends and summaries in an understandable format.
+    <strong>Sentiment Analysis of Tweets (NLP Project)</strong><br><br>
+    Built an NLP-based sentiment analysis system to classify tweets into positive, negative, and neutral
+    categories. Focused on text preprocessing, sentiment scoring, and visualization through a simple web
+    interface.
     <br><br>
-    <em>Technologies:</em> Python, NLP, Streamlit, Data Visualization
+    <em>Technologies:</em> Python, NLP, Streamlit
   </div>
 
   <div class="card">
-    <strong>To-Do List Application (Productivity-Focused Web App)</strong><br><br>
-    Created a task management web application aimed at improving personal productivity.
-    Implemented features such as task categorization, priority tracking, reminders, and basic visual
-    summaries. The project emphasized user-friendly design and logical feature implementation rather
-    than complex automation.
+    <strong>To-Do List Application (Productivity Tool)</strong><br><br>
+    Created a task management web application supporting task prioritization, reminders, and simple
+    visual summaries. Emphasized user-friendly design and logical feature implementation.
     <br><br>
-    <em>Technologies:</em> Python, Streamlit, UI Design Concepts
+    <em>Technologies:</em> Python, Streamlit
   </div>
 
   <div class="card">
-    <strong>Health Monitoring System (IoT-Based Academic Project)</strong><br><br>
-    Designed an IoT-based health monitoring system using Arduino and biomedical sensors to measure
-    basic vital parameters such as body temperature and heart rate. The project focused on understanding
-    sensor integration, data collection, and real-time monitoring concepts in embedded systems.
+    <strong>Health Monitoring System (IoT Academic Project)</strong><br><br>
+    Designed an Arduino-based health monitoring system using sensors to measure vital parameters such as
+    temperature and heart rate. Focused on sensor integration and real-time data monitoring.
     <br><br>
     <em>Technologies:</em> Arduino, Sensors, Embedded C/C++
   </div>
 
 </section>
+
+<section>
+  <h2>Contact</h2>
+  <div class="card">
+    📧 Email: <strong>jhaharsha73@gmail.com</strong><br>
+    📞 Phone: <strong>+91 9006137097</strong><br><br>
+
+    <a class="btn" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">LinkedIn</a>
+    <a class="btn" href="https://github.com/Harshajha23" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Harsha Jha | Portfolio
+</footer>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+      if (sec.getBoundingClientRect().top < window.innerHeight - 120) {
+        sec.classList.add("show");
+      }
+    });
+  });
+
+  function toggleMode() {
+    document.body.classList.toggle("light");
+  }
+</script>
+
+</body>
+</html>
