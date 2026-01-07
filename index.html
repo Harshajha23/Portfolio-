@@ -1,4 +1,33 @@
-: border-box;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harsha Jha | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --subtext: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    .light {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --subtext: #475569;
+      --accent: #2563eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
     }
@@ -17,13 +46,11 @@
 
     header h1 {
       font-size: 2.7rem;
-      font-weight: 600;
     }
 
     header p {
       margin-top: 10px;
       color: var(--subtext);
-      font-size: 1.05rem;
     }
 
     .toggle {
@@ -76,15 +103,21 @@
       font-size: 0.85rem;
     }
 
-    .btn {
-      display: inline-block;
-      margin: 8px 8px 0 0;
-      padding: 10px 18px;
-      background: var(--accent);
-      color: white;
-      border-radius: 8px;
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 15px;
+      margin-top: 10px;
       text-decoration: none;
-      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .social svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--accent);
     }
 
     footer {
@@ -143,42 +176,31 @@
   <div class="card">
     <strong>Queue Management System (Academic Web Project)</strong><br><br>
     Designed and implemented a web-based queue management system allowing users to generate tokens and
-    make online reservations. Included an admin interface for queue monitoring and data handling,
-    focusing on backend logic and database integration.
+    manage reservations. Focused on backend logic, database integration, and admin-side control.
     <br><br>
     <em>Technologies:</em> Django, MySQL, HTML, CSS, JavaScript
   </div>
 
   <div class="card">
     <strong>Diabetes Prediction System (ML & Power BI)</strong><br><br>
-    Developed a machine learning-based prediction system using healthcare datasets. Performed data
-    preprocessing and applied supervised learning algorithms. Created Power BI dashboards to visualize
-    predictions and health indicators.
+    Built a machine learning-based prediction system using healthcare datasets and visualized insights
+    through interactive Power BI dashboards.
     <br><br>
-    <em>Technologies:</em> Python, Machine Learning, Power BI, Pandas
+    <em>Technologies:</em> Python, Machine Learning, Power BI
   </div>
 
   <div class="card">
     <strong>Sentiment Analysis of Tweets (NLP Project)</strong><br><br>
-    Built an NLP-based sentiment analysis system to classify tweets into positive, negative, and neutral
-    categories. Focused on text preprocessing, sentiment scoring, and visualization through a simple web
-    interface.
+    Developed an NLP-based sentiment analysis system to classify tweets and visualize sentiment trends
+    using a simple web interface.
     <br><br>
     <em>Technologies:</em> Python, NLP, Streamlit
   </div>
 
   <div class="card">
-    <strong>To-Do List Application (Productivity Tool)</strong><br><br>
-    Created a task management web application supporting task prioritization, reminders, and simple
-    visual summaries. Emphasized user-friendly design and logical feature implementation.
-    <br><br>
-    <em>Technologies:</em> Python, Streamlit
-  </div>
-
-  <div class="card">
     <strong>Health Monitoring System (IoT Academic Project)</strong><br><br>
-    Designed an Arduino-based health monitoring system using sensors to measure vital parameters such as
-    temperature and heart rate. Focused on sensor integration and real-time data monitoring.
+    Designed an Arduino-based system to monitor basic health parameters, focusing on sensor integration
+    and real-time data collection.
     <br><br>
     <em>Technologies:</em> Arduino, Sensors, Embedded C/C++
   </div>
@@ -188,11 +210,22 @@
 <section>
   <h2>Contact</h2>
   <div class="card">
-    📧 Email: <strong>jhaharsha73@gmail.com</strong><br>
-    📞 Phone: <strong>+91 9006137097</strong><br><br>
+    📧 <strong>Email:</strong> jhaharsha73@gmail.com<br>
+    📞 <strong>Phone:</strong> +91 9006137097<br><br>
 
-    <a class="btn" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">LinkedIn</a>
-    <a class="btn" href="https://github.com/Harshajha23" target="_blank">GitHub</a>
+    <a class="social" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4 0 4.8 2.6 4.8 6v7.8h-4v-7c0-1.6 0-3.6-2.2-3.6s-2.6 1.7-2.6 3.5v7.1h-4V8z"/>
+      </svg>
+      LinkedIn
+    </a>
+
+    <a class="social" href="https://github.com/Harshajha23" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.11 3.29 9.45 7.86 10.98.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.7.08-.7 1.17.08 1.79 1.21 1.79 1.21 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.18a11.1 11.1 0 012.9-.39c.99 0 1.99.13 2.92.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.57.24 2.73.12 3.02.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.67.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.56 4.56-1.53 7.85-5.87 7.85-10.98C23.5 5.74 18.27.5 12 .5z"/>
+      </svg>
+      GitHub
+    </a>
   </div>
 </section>
 
