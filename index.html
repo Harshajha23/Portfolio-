@@ -5,7 +5,7 @@
 <title>Harsha Jha | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -29,7 +29,10 @@ body.light{
 --glow:rgba(37,99,235,0.5);
 }
 
-*{box-sizing:border-box;font-family:Poppins,sans-serif}
+*{
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
 
 body{
 margin:0;
@@ -39,7 +42,7 @@ transition:0.4s;
 }
 
 .container{
-max-width:900px;
+max-width:950px;
 margin:auto;
 padding:40px 20px;
 }
@@ -62,7 +65,7 @@ box-shadow:0 0 20px var(--glow);
 background:var(--card);
 padding:32px;
 border-radius:22px;
-margin-bottom:36px;
+margin-bottom:30px;
 box-shadow:0 15px 40px rgba(0,0,0,.35);
 opacity:0;
 transform:translateY(60px) scale(.97);
@@ -76,12 +79,12 @@ transform:translateY(0) scale(1);
 
 .card:hover{
 box-shadow:0 0 35px var(--glow);
-transform:translateY(-6px);
+transform:translateY(-5px);
 }
 
 h1{
-font-size:2.6rem;
-margin-bottom:8px;
+font-size:2.8rem;
+margin:0 0 8px;
 }
 
 .cursor{
@@ -95,7 +98,8 @@ animation:blink 1s infinite;
 
 h2{
 color:var(--accent);
-margin-bottom:14px;
+margin-top:0;
+margin-bottom:18px;
 position:relative;
 display:inline-block;
 }
@@ -116,22 +120,84 @@ from{opacity:.4}
 to{opacity:1}
 }
 
-p{color:var(--sub)}
+h3{
+margin-bottom:6px;
+color:var(--text);
+}
+
+p{
+color:var(--sub);
+line-height:1.7;
+}
+
+.location{
+font-size:.95rem;
+color:var(--sub);
+}
 
 .skills span{
 display:inline-block;
 background:rgba(56,189,248,.15);
 color:var(--accent);
-padding:7px 16px;
+padding:7px 15px;
 border-radius:20px;
-margin:6px 6px 0 0;
+margin:5px 5px 5px 0;
 font-size:.85rem;
 }
 
-.project{margin-top:20px}
-.tech{color:var(--accent);font-size:.85rem}
+.skill-group{
+margin-bottom:14px;
+}
 
-.btn-group{margin-top:18px}
+.skill-group strong{
+display:block;
+margin-bottom:5px;
+color:var(--text);
+}
+
+.project{
+margin-top:25px;
+padding-bottom:20px;
+border-bottom:1px solid rgba(156,163,175,.15);
+}
+
+.project:last-child{
+border-bottom:none;
+padding-bottom:0;
+}
+
+.project h3{
+font-size:1.1rem;
+}
+
+.tech{
+color:var(--accent);
+font-size:.85rem;
+margin-top:5px;
+}
+
+.experience{
+margin-top:22px;
+}
+
+.experience h3{
+margin-bottom:4px;
+}
+
+.experience-title{
+color:var(--accent);
+font-size:.88rem;
+margin-bottom:8px;
+}
+
+.certifications{
+line-height:2;
+color:var(--sub);
+}
+
+.btn-group{
+margin-top:20px;
+}
 
 .btn{
 display:inline-flex;
@@ -158,6 +224,32 @@ text-align:center;
 font-size:.8rem;
 color:var(--sub);
 margin-top:30px;
+padding-bottom:20px;
+}
+
+@media(max-width:600px){
+
+.container{
+padding:25px 15px;
+}
+
+.card{
+padding:24px;
+}
+
+h1{
+font-size:2.2rem;
+}
+
+.toggle{
+top:12px;
+right:12px;
+}
+
+.btn{
+margin-bottom:10px;
+}
+
 }
 </style>
 </head>
@@ -168,106 +260,464 @@ margin-top:30px;
 
 <div class="container">
 
-<div class="card">
-<h1><span id="typing"></span><span class="cursor">|</span></h1>
-<p>Engineering Undergraduate | Data Analytics & Machine Learning Enthusiast</p>
-<p>Mumbai, India</p>
-</div>
+<!-- HEADER -->
 
 <div class="card">
-<h2>Profile</h2>
+
+<h1>
+<span id="typing"></span><span class="cursor">|</span>
+</h1>
+
 <p>
-Engineering undergraduate with hands-on exposure to data analytics, machine learning fundamentals, and backend web development. Passionate about building data-driven solutions and continuously enhancing technical expertise through practical projects.
+Final-Year B.Tech Student | Web Development | AI Applications
 </p>
-</div>
 
-<div class="card">
-<h2>Education</h2>
-<p><strong>Bachelor of Engineering</strong><br>Shah & Anchor Kutchhi Engineering College</p>
-</div>
-
-<div class="card">
-<h2>Skills</h2>
-<div class="skills">
-<span>Python</span><span>Data Analytics</span><span>Machine Learning</span>
-<span>Power BI</span><span>SQL</span><span>HTML</span><span>CSS</span><span>Django</span>
-</div>
-</div>
-
-<div class="card">
-<h2>Projects</h2>
-
-<div class="project">
-<h3>Conference Management System</h3>
-<p>
-Built a full-stack web application to manage conferences with scheduling and CRUD operations. Implemented backend using Flask and SQLite, integrated authentication and PDF report generation, and deployed on PythonAnywhere.
+<p class="location">
+<i class="fa-solid fa-location-dot"></i>
+Mumbai, India
 </p>
-<div class="tech">Python • Flask • SQLite • Bootstrap</div>
-</div>
-
-<div class="project">
-<h3>Queue Management System</h3>
-<p>Backend-focused web application for queue handling, token generation, and online reservations.</p>
-<div class="tech">Python • Django • MySQL</div>
-</div>
-
-<div class="project">
-<h3>Diabetes Prediction System</h3>
-<p>Machine learning model with data preprocessing, prediction, and dashboard-based insights.</p>
-<div class="tech">Python • ML • Power BI</div>
-</div>
-
-<div class="project">
-<h3>Sentiment Analysis of Tweets</h3>
-<p>NLP system to classify tweets using text preprocessing and sentiment modeling.</p>
-<div class="tech">Python • NLP</div>
-</div>
-
-<div class="project">
-<h3>Health Monitoring System (IoT)</h3>
-<p>Arduino-based solution for monitoring health parameters using sensors.</p>
-<div class="tech">Arduino • IoT</div>
-</div>
-
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-<p>📧 jiharsha73@gmail.com</p>
-<p>📞 +91 7400421060</p>
 
 <div class="btn-group">
-<a class="btn" href="https://www.linkedin.com/in/harsha-jha-6a109628b" target="_blank">
-<i class="fa-brands fa-linkedin"></i> LinkedIn
+
+<a class="btn"
+href="https://www.linkedin.com/in/harsha-jha-6a109628b"
+target="_blank">
+
+<i class="fa-brands fa-linkedin"></i>
+LinkedIn
+
 </a>
-<a class="btn" href="https://github.com/Harshajha23" target="_blank">
-<i class="fa-brands fa-github"></i> GitHub
+
+<a class="btn"
+href="https://github.com/Harshajha23"
+target="_blank">
+
+<i class="fa-brands fa-github"></i>
+GitHub
+
 </a>
-</div>
+
+<a class="btn"
+href="mailto:jhaharsha73@gmail.com">
+
+<i class="fa-solid fa-envelope"></i>
+Email
+
+</a>
+
 </div>
 
-<footer>© 2026 Harsha Jha</footer>
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="card">
+
+<h2>Profile</h2>
+
+<p>
+Final-year B.Tech student in Electronics & Computer Science with hands-on
+experience in <strong>web development, React.js, JavaScript, Python, SQL,
+REST APIs, and AI applications</strong>. Built full-stack and backend
+projects involving databases, CRUD operations, authentication, API
+integration, and testing. Interested in software development and technical
+project environments, with a strong willingness to learn and work on
+real-world applications.
+</p>
 
 </div>
+
+
+<!-- EDUCATION -->
+
+<div class="card">
+
+<h2>Education</h2>
+
+<h3>B.Tech — Electronics & Computer Science</h3>
+
+<p>
+Shah & Anchor Kutchhi Engineering College, Mumbai
+<br>
+2023 – 2027
+</p>
+
+<p>
+<strong>CGPA: 7.76</strong>
+</p>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<div class="card">
+
+<h2>Technical Skills</h2>
+
+<div class="skill-group">
+
+<strong>Languages</strong>
+
+<div class="skills">
+<span>Python</span>
+<span>JavaScript</span>
+<span>SQL</span>
+<span>C</span>
+<span>C++</span>
+<span>Java (Basic)</span>
+</div>
+
+</div>
+
+
+<div class="skill-group">
+
+<strong>Web & Backend</strong>
+
+<div class="skills">
+<span>React.js</span>
+<span>Node.js</span>
+<span>Express.js</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>Flask</span>
+<span>REST APIs</span>
+<span>CRUD</span>
+</div>
+
+</div>
+
+
+<div class="skill-group">
+
+<strong>Databases</strong>
+
+<div class="skills">
+<span>MongoDB</span>
+<span>SQL</span>
+<span>SQLite</span>
+<span>MySQL (Basic)</span>
+<span>SQLAlchemy</span>
+</div>
+
+</div>
+
+
+<div class="skill-group">
+
+<strong>AI & Tools</strong>
+
+<div class="skills">
+<span>LangChain</span>
+<span>ChromaDB</span>
+<span>Hugging Face</span>
+<span>Ollama</span>
+<span>Streamlit</span>
+<span>Git</span>
+<span>GitHub</span>
+<span>Excel</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<div class="card">
+
+<h2>Projects</h2>
+
+
+<!-- TEAMTRACK -->
+
+<div class="project">
+
+<h3>TeamTrack — Project Task & Progress Manager</h3>
+
+<p>
+Developed a full-stack web application to
+<strong>create, assign, and track project tasks</strong>.
+Built a React.js interface for adding tasks, updating status,
+setting priorities, and viewing project progress.
+Developed REST APIs using Node.js and Express.js and connected
+the application with MongoDB. Implemented CRUD operations and
+tested API workflows for reliable task management.
+</p>
+
+<div class="tech">
+React.js • Node.js • Express.js • MongoDB • REST APIs
+</div>
+
+</div>
+
+
+<!-- FOODLY -->
+
+<div class="project">
+
+<h3>Foodly AI — Full-Stack Food Application</h3>
+
+<p>
+Built a food application with a
+<strong>React.js and JavaScript-based frontend</strong>
+and SQL-backed functionality. Developed user workflows including
+sign-in, registration, profile, cart, orders, and home pages.
+Connected frontend components with application data and backend
+functionality to create a complete web application.
+</p>
+
+<div class="tech">
+React.js • JavaScript • SQL • Vite
+</div>
+
+</div>
+
+
+<!-- AI KNOWLEDGE ASSISTANT -->
+
+<div class="project">
+
+<h3>AI Knowledge Assistant — RAG-Based Document Q&A</h3>
+
+<p>
+Built an application where users can
+<strong>upload PDFs and ask questions based on their documents</strong>.
+Used document processing, embeddings, and similarity search to
+retrieve relevant information. Integrated Ollama Llama 3.2 to
+generate responses using retrieved document content. Added a
+JD analysis feature to identify skills, eligibility,
+responsibilities, and generate interview questions.
+</p>
+
+<div class="tech">
+Python • LangChain • ChromaDB • Hugging Face • Ollama • Streamlit
+</div>
+
+</div>
+
+
+<!-- QUEUE -->
+
+<div class="project">
+
+<h3>Queue Management System</h3>
+
+<p>
+Developed a web application for
+<strong>token generation and customer queue management</strong>.
+Implemented REST APIs, CRUD operations, authentication, and
+SQLite database integration. Tested and debugged application
+workflows to improve application reliability.
+</p>
+
+<div class="tech">
+Python • Flask • SQLite • REST APIs • HTML • Bootstrap
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EXPERIENCE -->
+
+<div class="card">
+
+<h2>Experience</h2>
+
+
+<div class="experience">
+
+<h3>Data Science & Power BI Intern</h3>
+
+<p>
+Cleaned and analyzed real-world datasets using Python and Pandas.
+Created Power BI dashboards and worked on data validation and
+reporting. Collaborated on analytical tasks and communicated
+findings through visualizations.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<h3>Generative AI Intern | Eduskills</h3>
+
+<p>
+Gained practical exposure to Generative AI concepts and AI
+workflows. Worked on data preparation, preprocessing, and
+experimentation with AI tools.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<h3>Data Analytics Virtual Internship | Deloitte (Forage)</h3>
+
+<p>
+Completed practical tasks involving data analysis, visualization,
+and reporting. Worked on interpreting data and presenting
+analytical findings.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CERTIFICATIONS -->
+
+<div class="card">
+
+<h2>Certifications</h2>
+
+<div class="certifications">
+
+<p>
+<strong>Python Programming</strong> — Infosys Springboard
+</p>
+
+<p>
+<strong>Generative AI</strong> — Eduskills
+</p>
+
+<p>
+<strong>Data Analytics</strong> — Deloitte (Forage)
+</p>
+
+<p>
+<strong>Networking Basics</strong> — Cisco
+</p>
+
+<p>
+<strong>Data Science</strong>
+</p>
+
+<p>
+<strong>Quantum Computing</strong>
+</p>
+
+<p>
+<strong>Cognizant Technoverse</strong>
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="card">
+
+<h2>Contact</h2>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+jhaharsha73@gmail.com
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
++91 7400421060
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Mumbai, India
+</p>
+
+<div class="btn-group">
+
+<a class="btn"
+href="https://www.linkedin.com/in/harsha-jha-6a109628b"
+target="_blank">
+
+<i class="fa-brands fa-linkedin"></i>
+LinkedIn
+
+</a>
+
+<a class="btn"
+href="https://github.com/Harshajha23"
+target="_blank">
+
+<i class="fa-brands fa-github"></i>
+GitHub
+
+</a>
+
+<a class="btn"
+href="mailto:jhaharsha73@gmail.com">
+
+<i class="fa-solid fa-envelope"></i>
+Email
+
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+© 2026 Harsha Jha
+</footer>
+
+</div>
+
 
 <script>
-function toggleMode(){document.body.classList.toggle("light")}
 
-const cards=document.querySelectorAll('.card')
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+
+const cards=document.querySelectorAll('.card');
+
 const reveal=()=>cards.forEach(c=>{
-if(c.getBoundingClientRect().top<window.innerHeight-100)c.classList.add('show')
-})
-window.addEventListener('scroll',reveal);reveal()
 
-const text="Harsha Jha"
-let i=0
+if(c.getBoundingClientRect().top < window.innerHeight-100){
+
+c.classList.add('show');
+
+}
+
+});
+
+window.addEventListener('scroll',reveal);
+
+reveal();
+
+
+const text="Harsha Jha";
+
+let i=0;
+
 function type(){
+
 if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i)
-i++
-setTimeout(type,120)
-}}
-type()
+
+document.getElementById("typing").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(type,120);
+
+}
+
+}
+
+type();
+
 </script>
 
 </body>
